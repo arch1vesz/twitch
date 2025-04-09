@@ -1,6 +1,6 @@
 // /api/beso.js
 export default function handler(req, res) {
-  const { user = "Usuario", touser } = req.query;
+  const { user = "Usuario", touser = "" } = req.query;
 
  // Verificamos si 'touser' está vacío o no
   if (!touser || touser.trim() === "") {
