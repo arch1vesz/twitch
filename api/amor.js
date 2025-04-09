@@ -24,7 +24,7 @@ export default function handler(req, res) {
 
   if (!touser || touser.trim() === "" || user.toLowerCase() === touser.toLowerCase()) {
     res.setHeader("Content-Type", "text/plain");
-    return res.status(200).send(`A poco si mucho amor propio? 👀 Mejor, menciona a alguien más así "!amor @alguien" 😉`);
+    return res.status(200).send(`A poco si mucho amor propio ${user}? 👀 Mejor, menciona a alguien más así "!amor @alguien" 😉`);
   } else {
     let mensaje = `Hay un ${numero - 1}% de amor entre ${user} y ${touser}... `;
 
