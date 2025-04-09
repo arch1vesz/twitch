@@ -1,9 +1,9 @@
 // /api/beso.js
 export default function handler(req, res) {
-  const { user = "Usuario", touser = "" } = req.query;
+  const { user = "Usuario", touser} = req.query;
 
  // Verificamos si 'touser' está vacío o no
-  if (!touser || touser.trim() === "") {
+  if (!touser || touser.trim() === "" || user.toLowerCase() === touser.toLowerCase()) {
     // Si 'touser' está vacío, asignamos un valor por defecto
     const msn = 'Ey ${user}, no tires besos al aire, dedícaselo a alguien especial mencionándolo así "!beso @alguien"';
     res.setHeader("Content-Type", "text/plain");
