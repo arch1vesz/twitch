@@ -5,7 +5,7 @@ export default function handler(req, res) {
  // Verificamos si 'touser' está vacío o no
   if (!touser || touser.trim() === "" || user.toLowerCase() === touser.toLowerCase()) {
     // Si 'touser' está vacío, asignamos un valor por defecto
-    const msn = 'Ey ${user}, no tires besos al aire, dedícaselo a alguien especial mencionándolo así "!beso @alguien"';
+    const msn = `Ey ${user}, no tires besos al aire, dedícaselo a alguien especial mencionándolo así "!beso @alguien"`;
     res.setHeader("Content-Type", "text/plain");
   res.status(200).send(msn);
   }else{
