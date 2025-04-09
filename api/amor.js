@@ -1,6 +1,6 @@
 // /api/amor.js
 export default function handler(req, res) {
-  const { user = "Usuario", touser = "Alguien" } = req.query;
+  const { user = "Usuario", touser } = req.query;
   const numero = Math.floor(Math.random() * 101);
   const random = Math.floor(Math.random() * 3);
 
@@ -22,7 +22,11 @@ export default function handler(req, res) {
     "Oww, no se cambiarían por nada 💞 o, tal vez por una Sub? 🤑"
   ];
 
-  let mensaje = `Hay un ${numero - 1}% de amor entre ${user} y ${touser}... `;
+  if (!touser || touser.trim() === "" || user.lowerCase() === touser.lowerCase()) {
+    res.setHeader("Content-Type", "text/plain");
+    return res.status(200).send(`A poco si mucho amor propio? 👀 Mejor, menciona a alguien más así "!amor @alguien" 😉`);
+  } else {
+    let mensaje = `Hay un ${numero - 1}% de amor entre ${user} y ${touser}... `;
 
   if (numero === 0) {
     mensaje += "Emmss... sin comentarios 👀.";
@@ -38,4 +42,7 @@ export default function handler(req, res) {
 
   res.setHeader("Content-Type", "text/plain");
   res.status(200).send(mensaje);
+  }
+
+  
 }
