@@ -7,7 +7,7 @@ export default function handler(req, res) {
   const r25 = [
     "Nomas? 👀 Mejor nadota eh.",
     "Oye ${user}, pero si le quieres o no? 🤔",
-    "Y mi celular tiene el ${numero + 1}% de batería 🪫."
+    "Y mi celular tiene el ` ${numero + 1}`% de batería 🪫."
   ];
 
   const r = [
