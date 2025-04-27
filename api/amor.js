@@ -1,13 +1,13 @@
 // /api/amor.js
 export default function handler(req, res) {
-  const { sender = "Usuario", touser } = req.query;
+  const { sender = "Usuario", touser = ""} = req.query;
   const numero = Math.floor(Math.random() * 101);
   const random = Math.floor(Math.random() * 3);
 
   const r25 = [
     "Nomas? 👀 Mejor nadota eh.",
     "Oye ${sender}, pero si le quieres o no? 🤔",
-    "Y mi celular tiene el ` ${numero + 1}`% de batería 🪫."
+    `Y mi celular tiene el  ${numero + 1}% de batería 🪫.`
   ];
 
   const r = [
