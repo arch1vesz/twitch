@@ -25,8 +25,8 @@ export default function handler(req, res) {
   if (!objetivo || objetivo.toLowerCase() === `@${sender.toLowerCase()}`) {
     // No hay mención o es uno mismo
     const saludos = [
-      `👋 ¡Hola ${sender}! ¡Bienvenido/a al stream! ¿Cómo te encuentras? 😄`,
-      `🌞 ¡Buenas buenas ${sender}! ¿Cómo andamos? 👋`,
+      `👋 ¡Hola ${sender}! ¡Bienvenid@ al stream! ¿Cómo te encuentras? 😄`,
+      `🌞 ¡Buenas buenas ${sender}! ¿Qué tal tu día? 👋`,
       `🙋‍♂️ ¡Saludos ${sender}! ¿Cómo te trata la buena vida? 🎉`
     ];
     const randomSaludo = Math.floor(Math.random() * saludos.length);
