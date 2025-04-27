@@ -19,7 +19,7 @@ export default function handler(req, res) {
 
     res.setHeader("Content-Type", "text/plain");
 
-    if (!objetivo || objetivo.toLowerCase() === `@${sender.toLowerCase()}`) {
+    if (!objetivo) {
       const saludos = [
         `👋 ¡Hola ${sender}! ¡Bienvenido/a al stream! ¿Cómo te encuentras? 😄`,
         `🌞 ¡Buenas buenas ${sender}! ¿Cómo andamos? 👋`,
