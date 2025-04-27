@@ -2,23 +2,24 @@
 export default function handler(req, res) {
   const { sender = "Usuario", touser = "", query = "" } = req.query;
 
-  // Función para encontrar el primer @usuario en el query y asegurarse que tenga el formato correcto
+  // Función para encontrar el primer @usuario en el query
   const encontrarUsuarioMencionado = (texto) => {
-    if (!texto || texto === "") return query.trim().split(/\s+/)[0];
-    // Aseguramos que el texto comience con @, sino lo añadimos
-    if (texto.startsWith('@')) {
+    if (texto && texto.startsWith('@')) {
       return texto;
-    } else {
-      return query.trim().split(/\s+/)[0]; // Añadimos el @ si no está presente
     }
+    if (query) {
+      // Buscar la primera palabra que empiece con @
+      const palabras = query.trim().split(/\s+/);
+      const mencion = palabras.find(palabra => palabra.startsWith('@'));
+      return mencion || null;
+    }
+    return null;
   };
 
-  // Si 'touser' no tiene valor, usamos 'query' para detectar mención de usuario
   const objetivo = encontrarUsuarioMencionado(touser);
 
   res.setHeader("Content-Type", "text/plain");
 
-  // Si no hay mención (objetivo es null) o es el mismo usuario
   if (!objetivo || objetivo.toLowerCase() === `@${sender.toLowerCase()}`) {
     // No hay mención o es uno mismo
     const saludos = [
@@ -29,7 +30,7 @@ export default function handler(req, res) {
     const randomSaludo = Math.floor(Math.random() * saludos.length);
     res.status(200).send(saludos[randomSaludo]);
   } else {
-    // Hay un @usuario detectado (objetivo no es null y no es el mismo usuario)
+    // Hay un @usuario detectado
     const saludos = [
       `👋 ¡Hola ${objetivo}! ${sender} te saluda con mucho cariño. 😄`,
       `🌟 ¡Buenas buenas ${objetivo}! ${sender} te manda un gran saludo. 👋`,
