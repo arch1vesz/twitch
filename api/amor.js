@@ -1,12 +1,12 @@
 // /api/amor.js
 export default function handler(req, res) {
-  const { user = "Usuario", touser } = req.query;
+  const { sender = "Usuario", touser } = req.query;
   const numero = Math.floor(Math.random() * 101);
   const random = Math.floor(Math.random() * 3);
 
   const r25 = [
     "Nomas? 👀 Mejor nadota eh.",
-    "Oye ${user}, pero si le quieres o no? 🤔",
+    "Oye ${sender}, pero si le quieres o no? 🤔",
     "Y mi celular tiene el ` ${numero + 1}`% de batería 🪫."
   ];
 
@@ -24,7 +24,7 @@ export default function handler(req, res) {
 
   if (!touser || touser.trim() === "" || user.toLowerCase() === touser.toLowerCase()) {
     res.setHeader("Content-Type", "text/plain");
-    return res.status(200).send(`A poco si mucho amor propio ${user}? 👀 Mejor, menciona a alguien más así "!amor @alguien" 😉`);
+    return res.status(200).send(`A poco si mucho amor propio ${sender}? 👀 Mejor, menciona a alguien más así "!amor @alguien" 😉`);
   } else {
     let mensaje = `Hay un ${numero - 1}% de amor entre ${user} y ${touser}... `;
 
