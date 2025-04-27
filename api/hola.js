@@ -4,7 +4,7 @@ export default function handler(req, res) {
     const { sender = "Usuario", touser = "", query = "" } = req.query;
 
     const encontrarUsuarioMencionado = (touserTexto, queryTexto) => {
-      if (touserTexto && touserTexto.startsWith('@')) {
+      if (touserTexto.startsWith('@')) {
         return touserTexto;
       }
       if (queryTexto) {
