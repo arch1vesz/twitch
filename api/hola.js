@@ -4,15 +4,14 @@ export default function handler(req, res) {
 
   // Función para encontrar el primer @usuario
   const encontrarUsuarioMencionado = (touserTexto, queryTexto) => {
-    if (touserTexto && touserTexto.startsWith('@')) {
+    if (touserTexto.startsWith('@')) {
       return touserTexto;
-    }
-    if (queryTexto) {
+    }else{
+      if (queryTexto) {
       const palabras = queryTexto.trim().split(/\s+/);
       const mencion = palabras.find(palabra => palabra.startsWith('@'));
-      return mencion || null;
-    }
-    return null;
+      return mencion;
+    }    
   };
 
   const objetivo = encontrarUsuarioMencionado(touser, query);
