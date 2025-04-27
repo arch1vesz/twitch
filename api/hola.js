@@ -1,10 +1,10 @@
 // /api/hola.js
 export default function handler(req, res) {
-  const { sender = "Usuario", touser = "ToUser", query = "Query" } = req.query;
+  const { sender = "Usuario", touser = "", query = "" } = req.query;
 
   // Función para encontrar el primer @usuario en el query y asegurarse que tenga el formato correcto
   const encontrarUsuarioMencionado = (texto) => {
-    if (!texto) return null;
+    if (!texto || texto === "") return touser;
     // Aseguramos que el texto comience con @, sino lo añadimos
     if (texto.startsWith('@')) {
       return texto;
