@@ -5,6 +5,7 @@ export default function handler(req, res) {
   // Función para encontrar el primer @usuario en el query
   const encontrarUsuarioMencionado = (texto) => {
     if (!texto) return null;
+    // Buscar la primera ocurrencia de @ seguido de texto
     const match = texto.match(/@(\w+)/);
     return match ? `@${match[1]}` : null;
   };
