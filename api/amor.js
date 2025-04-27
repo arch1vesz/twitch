@@ -22,7 +22,7 @@ export default function handler(req, res) {
     `Oww, no se cambiarían por nada 💞 o, tal vez por una Sub? 🤑`
   ];
 
-  if (!touser || touser.trim() === "" || user.toLowerCase() === touser.toLowerCase()) {
+  if (!touser || touser.trim() === "" || sender.toLowerCase() === touser.toLowerCase()) {
     res.setHeader("Content-Type", "text/plain");
     return res.status(200).send(`A poco si mucho amor propio ${sender}? 👀 Mejor, menciona a alguien más así: "!amor @alguien" 😉`);
   } else {
