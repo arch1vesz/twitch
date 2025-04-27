@@ -13,7 +13,7 @@ export default function handler(req, res) {
         return mencion;
       }
     }
-    return null;
+    return touserTexto;
   };
 
   // Si 'touser' no tiene valor, usamos 'query' para detectar mención de usuario
