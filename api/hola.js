@@ -12,7 +12,7 @@ export default function handler(req, res) {
         const mencion = palabras.find(palabra => palabra.startsWith('@'));
         return mencion;
       }
-      return null;
+      return touserTexto;
     };
 
     const objetivo = encontrarUsuarioMencionado(touser, query);
