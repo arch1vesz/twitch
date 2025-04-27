@@ -1,6 +1,6 @@
 // /api/hola.js
 export default function handler(req, res) {
-  const { sender = "Usuario", touser = "", query = "" } = req.query;
+  const { sender = "Usuario", touser = "ToUser", query = "Query" } = req.query;
 
   // Función para encontrar el primer @usuario en el query y asegurarse que tenga el formato correcto
   const encontrarUsuarioMencionado = (texto) => {
