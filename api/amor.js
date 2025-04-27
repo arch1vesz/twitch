@@ -3,7 +3,7 @@ export default function handler(req, res) {
   const { sender = "Usuario", touser = ""} = req.query;
   const numero = Math.floor(Math.random() * 101);
   const random = Math.floor(Math.random() * 3);
-  const numeroBateria = numero === 100 ? numero : numero + 1;
+  const numeroBateria = numero + 1;
 
   const r25 = [
     `Nomas? 👀 Mejor nadota eh.`,
