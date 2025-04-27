@@ -3,17 +3,22 @@ export default function handler(req, res) {
   try {
     const { sender = "Usuario", touser = "", query = "" } = req.query;
 
-    const encontrarUsuarioMencionado = (touserTexto, queryTexto) => {
-      if (touserTexto.startsWith('@')) {
-        return touserTexto;
-      }
-      if (queryTexto) {
-        const palabras = queryTexto.trim().split(/\s+/);
-        const mencion = palabras.find(palabra => palabra.startsWith('@'));
-        return mencion;
-      }
-      return touserTexto;
-    };
+ const encontrarUsuarioMencionado = (touserTexto, queryTexto) => {
+  // Si touser tiene un valor válido y empieza con '@', lo usamos directamente.
+  if (touserTexto && touserTexto.startsWith('@')) {
+    return touserTexto;
+  }
+
+  // Si no, buscamos la primera palabra que empiece con '@' en el query.
+  if (queryTexto) {
+    const palabras = queryTexto.trim().split(/\s+/); // Dividimos la cadena en palabras
+    const mencion = palabras.find(palabra => palabra.startsWith('@')); // Buscamos la primera que empiece con '@'
+    return mencion || null; // Si encontramos una mención, la retornamos, sino retornamos null
+  }
+
+  // Si no se encontró ninguna mención, devolvemos null
+  return null;
+};
 
     const objetivo = encontrarUsuarioMencionado(touser, query);
 
