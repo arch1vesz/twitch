@@ -9,12 +9,12 @@ export default function handler(req, res) {
     if (texto.startsWith('@')) {
       return texto;
     } else {
-      return `@${texto}`; // Añadimos el @ si no está presente
+      return touser; // Añadimos el @ si no está presente
     }
   };
 
   // Si 'touser' no tiene valor, usamos 'query' para detectar mención de usuario
-  const objetivo = encontrarUsuarioMencionado(touser || query);
+  const objetivo = encontrarUsuarioMencionado(query);
 
   res.setHeader("Content-Type", "text/plain");
 
