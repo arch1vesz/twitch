@@ -2,18 +2,23 @@
 export default function handler(req, res) {
   const { user = "Usuario", query = "" } = req.query;
 
-  // Función para encontrar el primer @usuario en el query
+  // Función para encontrar el primer @usuario en el query y asegurarse que tenga el formato correcto
   const encontrarUsuarioMencionado = (texto) => {
-    if (!texto) return null;
-    // Buscar la primera ocurrencia de @ seguido de texto
-    const match = texto.match(/@(\w+)/);
-    return match ? `@${match[1]}` : null;
+    if (!texto) return null;  // Si no hay texto, retornamos null
+    // Aseguramos que el texto comience con @, sino lo añadimos
+    if (texto.startsWith('@')) {
+      return texto;
+    } else {
+      return `@${texto}`; // Añadimos el @ si no está presente
+    }
   };
 
-  const objetivo = encontrarUsuarioMencionado(query);
+  // Si `query` está vacío, no asignamos un valor para `objetivo`
+  const objetivo = query ? encontrarUsuarioMencionado(query) : null;
 
   res.setHeader("Content-Type", "text/plain");
 
+  // Verificamos si el objetivo no está presente o si es el mismo usuario
   if (!objetivo || objetivo.toLowerCase() === `@${user.toLowerCase()}`) {
     // No hay mención o es uno mismo
     const saludos = [
