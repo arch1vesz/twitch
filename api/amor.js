@@ -3,11 +3,12 @@ export default function handler(req, res) {
   const { sender = "Usuario", touser = ""} = req.query;
   const numero = Math.floor(Math.random() * 101);
   const random = Math.floor(Math.random() * 3);
+  const numeroBateria = numero === 100 ? numero : numero + 1;
 
   const r25 = [
     `Nomas? 👀 Mejor nadota eh.`,
     `Oye ${sender}, pero si le quieres o no? 🤔`,
-    `Y mi celular tiene el  ${numero + 1}% de batería 🪫.`
+    `Y mi celular tiene el  ${numeroBateria}% de batería 🪫.`
   ];
 
   const r = [
@@ -23,7 +24,6 @@ export default function handler(req, res) {
   ];
 
   if (!touser || touser.trim() === "" || sender.toLowerCase() === touser.toLowerCase()) {
-    res.setHeader("Content-Type", "text/plain");
     return res.status(200).send(`A poco si mucho amor propio ${sender}? 👀 Mejor, menciona a alguien más así: "!amor @alguien" 😉`);
   } else {
     let mensaje = `Hay un ${numero - 1}% de amor entre ${sender} y ${touser}... `;
