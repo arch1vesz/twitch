@@ -8,7 +8,9 @@ export default function handler(req, res) {
         return touserTexto;
       }
       if (queryTexto) {
-        return queryTexto.trim().split(/\s+/)[0];
+        const palabras = queryTexto.trim().split(/\s+/);
+        const mencion = palabras.find(palabra => palabra.startsWith('@'));
+        return mencion;
       }
       return touserTexto;
     };
