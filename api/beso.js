@@ -1,4 +1,4 @@
-er// /api/beso.js
+// /api/beso.js
 export default function handler(req, res) {
   const { sender = "Usuario", touser = ""} = req.query;
 
