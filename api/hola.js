@@ -4,17 +4,17 @@ export default function handler(req, res) {
 
   // Función para encontrar el primer @usuario en el query y asegurarse que tenga el formato correcto
   const encontrarUsuarioMencionado = (texto) => {
-    if (!texto || texto === "") return touser;
+    if (!texto || texto === "") return query.trim().split(/\s+/)[0];
     // Aseguramos que el texto comience con @, sino lo añadimos
     if (texto.startsWith('@')) {
       return texto;
     } else {
-      return touser; // Añadimos el @ si no está presente
+      return query.trim().split(/\s+/)[0]; // Añadimos el @ si no está presente
     }
   };
 
   // Si 'touser' no tiene valor, usamos 'query' para detectar mención de usuario
-  const objetivo = encontrarUsuarioMencionado(query);
+  const objetivo = encontrarUsuarioMencionado(touser);
 
   res.setHeader("Content-Type", "text/plain");
 
