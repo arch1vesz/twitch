@@ -1,6 +1,6 @@
 er// /api/beso.js
 export default function handler(req, res) {
-  const { sender = "Usuario", touser} = req.query;
+  const { sender = "Usuario", touser = ""} = req.query;
 
  // Verificamos si 'touser' está vacío o no
   if (!touser || touser.trim() === "" || sender.toLowerCase() === touser.toLowerCase()) {
