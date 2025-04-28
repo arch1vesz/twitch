@@ -21,7 +21,7 @@ export default async function handler(req, res) {
         const game = await response.text();  // Usamos `.text()` en lugar de `.json()` porque la respuesta es texto, no JSON
   
         // Verificamos si se obtuvo un resultado válido
-        if (game === "User not found") {
+        if (game === `User not found: ${cleanTouser}`) {
             res.setHeader("Content-Type", "text/plain");
             return res.status(200).send(`¡${sender}, menciona al usuario correctamente! 😉 Intentalo de nuevo.`);
         }
