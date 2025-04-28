@@ -28,5 +28,5 @@ export default function handler(req, res) {
 
     const randomSo = Math.floor(Math.random() * so.length);
     res.setHeader("Content-Type", "text/plain");
-    res.status(200).send(besos[randomSo]);
+    res.status(200).send(so[randomSo]);
 }
