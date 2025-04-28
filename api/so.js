@@ -10,7 +10,7 @@ export default async function handler(req, res) {
       try {
         // Haciendo una solicitud GET a la API de Twitch
         const response = await fetch(`https://decapi.me/twitch/game/${touser}`);
-        const data = await response.json();
+        const data = await response.text();
         const game = data;
   
         // Armar el mensaje final
