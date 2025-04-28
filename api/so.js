@@ -20,6 +20,12 @@ export default async function handler(req, res) {
         // Parseamos la respuesta como JSON
         const game = await response.text();  // Usamos `.text()` en lugar de `.json()` porque la respuesta es texto, no JSON
   
+        // Verificamos si se obtuvo un resultado válido
+        if (game === "User not found") {
+            res.setHeader("Content-Type", "text/plain");
+            return res.status(200).send(`¡${sender}, menciona al usuario correctamente! 😉 Intentalo de nuevo.`);
+        }
+  
         // Armar el mensaje final
         const so = [
           `Vayan a seguir a ${touser} 💖 en https://twitch.tv/${cleanTouser}, que trae contenido buenísimo con: ${game}.`,
@@ -32,6 +38,8 @@ export default async function handler(req, res) {
         return res.status(200).send(so[randomSo]);
   
       } catch (error) {
+        console.error("Error al hacer la solicitud:", error);
+        res.status(500).send("Hubo un error al obtener la información del usuario.");
       }
     }
   }
