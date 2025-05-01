@@ -27,9 +27,12 @@ export default async function handler(req, res) {
             } else {
                 // Armar el mensaje final
                 const so = [
-                    `Vayan a seguir a ${touser} 💖 en https://twitch.tv/${cleanTouser}, que trae contenido buenísimo con: ${game}.`,
-                    `Vayan a seguir a ${touser} para que nos siga trayendo más contenido de ${game} en: https://twitch.tv/${cleanTouser} 💖`,
-                    `Vayan y dejen su follow a ${touser} 💖 en https://twitch.tv/${cleanTouser}, que estaba transmitiendo: ${game}.`
+                    `🚨 ¡ALERTA! Hemos sido invadidos por ${touser} y su tropa de leyendas 💖 vayan a seguirle  en https://twitch.tv/${cleanTouser}, que trae contenido buenísimo en: ${game}.`,
+                    `🔥 El canal sube de temperatura gracias a ${touser} ¡Gracias por traer tu party de campeones! Vayan a seguirle para que nos siga trayendo más contenido de ${game} en: https://twitch.tv/${cleanTouser} 💖`,
+                    `⚔️ ¡Un ejército ha llegado! Gracias por el raid, ${touser}, ahora esto se va a poner bueno (o raro, depende) 🤔 Pero vayan y dejenle su follow en https://twitch.tv/${cleanTouser} 💖 que estaba transmitiendo: ${game}.`,
+                    `¡OJO! Nos cae una banda de leyendas, acomódensen, pongan su mejor cara 👀 y no olviden seguirlo en https://twitch.tv/${cleanTouser} 💖 para que nos siga trayendo más contenido de: ${game}.`,
+                    `¿Una raid? ¡Esto se puso serio! Activen el modo pro, saquen las papas 🍟 y vayan a dejarle un buen follow a https://twitch.tv/${cleanTouser} 💖 para que nos siga sorprendiendo en: ${game}.`,
+                    `¡Miren nada más quiénes llegaron! Bienvenidos al lugar donde hasta los fails brillan 💫, ${touser}, gracias por la Raid 💖 ¿Cómo les fue en ${game}? No olviden ir a dejarle su follow a https://twitch.tv/${cleanTouser}`
                 ];
 
                 const randomSo = Math.floor(Math.random() * so.length);
