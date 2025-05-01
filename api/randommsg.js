@@ -14,7 +14,6 @@ export default function () {
       `Es tan pro que el tutorial le pidió consejos`,
       `Si fallar fuera un deporte, ya tendría patrocinadores`,
       `Wow, qué buena esa eh, casi me emociono`
-      ``
     ];
   
     const randomMsg = Math.floor(Math.random() * mensajes.length);
