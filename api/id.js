@@ -6,9 +6,9 @@ export default async function handler(req, res) {
     let mensaje = "";
 
     if (!touser || touser.trim() === "") {
-        user = touser;
-    } else {
         user = sender;
+    } else {
+        user = touser;
     }
 
     try {
