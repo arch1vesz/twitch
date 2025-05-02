@@ -2,7 +2,7 @@
 export default async function handler(req, res) {
 
     const { sender = "Usuario", touser = "" } = req.query;
-    const user = "";
+    let user = "";
 
     if (touser === "" || !touser) {
         user = touser;
