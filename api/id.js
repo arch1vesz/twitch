@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     let user = "";
     let mensaje = "";
 
-    if (touser === "" || !touser) {
+    if (touser === "") {
         user = touser;
     } else {
         user = sender;
