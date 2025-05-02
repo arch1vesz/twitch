@@ -1,7 +1,7 @@
 // /api/id.js
 export default async function handler(req, res) {
 
-    const { sender = "Usuario", touser = "" } = req.query;
+    const { sender = "Usuario", touser = "", channel = "" } = req.query;
     let user = "";
     let mensaje = "";
 
@@ -13,7 +13,7 @@ export default async function handler(req, res) {
 
     try {
         // Haciendo una solicitud GET a la API de Twitch
-        const response = await fetch(`https://decapi.me/twitch/game/kevinj_x`);
+        const response = await fetch(`https://decapi.me/twitch/game/${channel}`);
 
         // Verificamos si la respuesta fue exitosa
         if (!response.ok) {
