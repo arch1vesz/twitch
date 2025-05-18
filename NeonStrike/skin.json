@@ -2,6 +2,6 @@
     "name": "NeonStrike",
     "version": "1.0",
     "controller": "xbox",
-    "style": "style.css",
+    "style": "https://twitch-ten-omega.vercel.app/NeonStrike/style.css",
     "notes": "Custom neon skin for Xbox controller with animated glow effect."
 }
