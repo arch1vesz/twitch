@@ -1,6 +1,6 @@
 /*BEGIN Xbox One Controller Styling*/
 .controller.xbox {
-    background: url(xbox-assets/base.svg);
+    background: url(https://twitch-ten-omega.vercel.app/Mando/base.svg);
     height: 630px;
     width: 750px;
     /*    margin-left: -375px;
@@ -8,11 +8,11 @@
 }
 
 .xbox.white {
-    background: url(xbox-assets/base-white.svg);
+    background: url(https://twitch-ten-omega.vercel.app/Mando/base-white.svg);
 }
 
 .xbox.disconnected {
-    background: url(xbox-assets/disconnected.svg);
+    background: url(https://twitch-ten-omega.vercel.app/Mando/disconnected.svg);
 }
 
 .xbox.disconnected div {
@@ -29,7 +29,7 @@
 .xbox .trigger {
     width: 88px;
     height: 121px;
-    background: url(xbox-assets/trigger.svg);
+    background: url(https://twitch-ten-omega.vercel.app/Mando/trigger.svg);
     opacity: 0;
 }
 
@@ -46,7 +46,7 @@
 .xbox .bumper {
     width: 170px;
     height: 61px;
-    background: url(xbox-assets/bumper.svg);
+    background: url(https://twitch-ten-omega.vercel.app/Mando/bumper.svg);
     opacity: 0;
 }
 
@@ -74,7 +74,7 @@
 
 .xbox .quadrant {
     position: absolute;
-    background: url(xbox-assets/quadrant.svg);
+    background: url(https://twitch-ten-omega.vercel.app/Mando/quadrant.svg);
     height: 45px;
     width: 45px;
     top: 258px;
@@ -111,7 +111,7 @@
 }
 
 .xbox .back, .xbox .start {
-    background: url(xbox-assets/start-select.svg);
+    background: url(https://twitch-ten-omega.vercel.app/Mando/start-select.svg);
     width: 33px;
     height: 33px;
     opacity: 0;
@@ -140,7 +140,7 @@
 
 .xbox .button {
     position: absolute;
-    background: url(xbox-assets/abxy.svg);
+    background: url(https://twitch-ten-omega.vercel.app/Mando/abxy.svg);
     width: 48px;
     height: 48px;
 }
@@ -185,7 +185,7 @@
 
 .xbox .stick {
     position: absolute;
-    background: url(xbox-assets/stick.svg);
+    background: url(https://twitch-ten-omega.vercel.app/Mando/stick.svg);
     background-position: -85px 0;
     height: 83px;
     width: 83px;
@@ -214,7 +214,7 @@
 }
 
 .xbox .face {
-    background: url(xbox-assets/dpad.svg);
+    background: url(https://twitch-ten-omega.vercel.app/Mando/dpad.svg);
     position: absolute;
     opacity: 0;
 }
